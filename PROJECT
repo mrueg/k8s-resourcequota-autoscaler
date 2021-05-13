@@ -1,0 +1,19 @@
+domain: m21r.de
+layout:
+- go.kubebuilder.io/v3
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: k8s-resourcequota-autoscaler
+repo: github.com/mrueg/k8s-resourcequota-autoscaler
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: m21r.de
+  group: k8s-resourcequota-autoscaler
+  kind: ManagedResourceQuota
+  path: github.com/mrueg/k8s-resourcequota-autoscaler/api/v1beta1
+  version: v1beta1
+version: "3"

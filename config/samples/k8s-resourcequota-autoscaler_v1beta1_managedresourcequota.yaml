@@ -1,0 +1,7 @@
+apiVersion: k8s-resourcequota-autoscaler.m21r.de/v1beta1
+kind: ManagedResourceQuota
+metadata:
+  name: managedresourcequota-sample
+spec:
+  # Add fields here
+  foo: bar

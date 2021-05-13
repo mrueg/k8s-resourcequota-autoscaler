@@ -1,0 +1,24 @@
+# permissions for end users to edit managedresourcequota.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: managedresourcequota-editor-role
+rules:
+- apiGroups:
+  - k8s-resourcequota-autoscaler.m21r.de
+  resources:
+  - managedresourcequota
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - k8s-resourcequota-autoscaler.m21r.de
+  resources:
+  - managedresourcequota/status
+  verbs:
+  - get

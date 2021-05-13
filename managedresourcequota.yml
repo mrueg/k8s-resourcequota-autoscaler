@@ -1,0 +1,12 @@
+apiVersion: k8s-resourcequota-autoscaler.m21r.de/v1beta1
+kind: ManagedResourceQuota
+metadata:
+  name: compute-resources
+spec:
+  template:
+    hard:
+      requests.cpu: "{{ mul .Nodes 1 }}"
+      requests.memory: "{{ max (mul .Nodes 1) 4 }}Gi"
+      limits.cpu: "{{ mul .Nodes 2 }}"
+      limits.memory: "{{ mul .Nodes 2 }}Gi"
+
